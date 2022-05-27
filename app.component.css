@@ -1,0 +1,14 @@
+button:hover{
+    background-color: lightblue;
+    color:black;
+}
+label{
+    color:antiquewhite;
+    font-size: large;
+    padding: 10px;
+}
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 15px;
+}

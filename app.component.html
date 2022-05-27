@@ -1,0 +1,29 @@
+
+<div class="container" >
+<h1>TodoList1</h1>
+<form #myform="ngForm">
+  <div>
+  <div class="col-6 ">
+  <label for="foronly">AddItem</label>
+<input type="text" class="form-control "  name="List" [(ngModel)]="user.List">
+  </div>
+  <div class="col-6 mt-3">
+  <button type="button" class="btn btn-primary" *ngIf="!isEdit" (click)="additems(myform.value)">Add</button>
+  <button type="button" class="btn btn-success"  *ngIf="isEdit" (click)="updateitem()">UpDate</button>
+  </div>
+  </div>
+</form>
+<br><br>
+<div style="background-color:Tomato;">
+<p *ngFor="let f of lname" style="list-style-type: none;">
+  <li style="font-size: x-large; margin-left: 20px;color:floralwhite;">{{f.List}}</li>
+  
+  <button type="button" style="border-radius: 5%;" class="btn btn-primary m-2" (click)="deleteitems(f.id)">delete</button>
+<button type="button" style="border-radius: 5%;"  class="btn btn-primary m-2" (click)="Edititems(f)">edit</button>
+
+<input type="radio" value="completed" (click)="setitems(f.id)"><label >Complete</label>
+<input type="radio" value="Reschedule" (click)="setitems(f.id)"><label >Reschedule</label>
+<input type="radio" value="Schedule" (click)="setitems(f.id)"><label >Schedule</label>
+</p>
+</div>
+
